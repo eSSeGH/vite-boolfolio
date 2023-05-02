@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+ol,
+menu {
+    list-style-type: none;
+}
+
+.icon {
+    font-family: Font Awesome 6 Free;
+    color: white;
+    filter: drop-shadow(0 0 4px black);
+}
+
+// CONTAINER
+
+.container {
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+// UTILITY CLASSES
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}

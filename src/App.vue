@@ -9,9 +9,7 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <Projects></Projects>
-  </div>
+  <Projects></Projects>
 </template>
 
 <style lang="scss" scoped></style>
