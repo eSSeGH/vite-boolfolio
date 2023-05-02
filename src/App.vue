@@ -1,9 +1,17 @@
 <script>
-export default {
+import Projects from './components/Projects.vue'
 
+export default {
+  components: {
+    Projects,
+  }
 }
 </script>
 
-<template></template>
+<template>
+  <div class="container">
+    <Projects></Projects>
+  </div>
+</template>
 
 <style lang="scss" scoped></style>
