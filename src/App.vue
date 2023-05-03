@@ -19,10 +19,6 @@ export default {
   <footer>
     <h1>serie di link</h1>
   </footer>
-  <!-- <div class="container">
-    <h1>TUTTI I PROGETTI</h1>
-    <Projects></Projects>
-  </div> -->
 </template>
 
 <style lang="scss" scoped></style>
