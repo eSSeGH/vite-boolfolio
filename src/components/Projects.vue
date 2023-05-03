@@ -35,34 +35,35 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-list">
+                <h2>PROGETTI</h2>
 
-        <section class="projects-list">
-            <h2>PROGETTI</h2>
-
-            <ProjectCard v-for="(el, i) in store.projects" :key="i" :projectCard="el" :title="store.projects.title"
-                :description="store.projects.description" :client_name="store.projects.client_name"
-                :client_tel="store.projects.client_tel" :created_at="store.projects.created_at"
-                :updated_at="store.projects.updated_at" :deleted_at="store.projects.deleted_at" class="col">
-            </ProjectCard>
-        </section>
-    </div>
+                <ProjectCard v-for="(el, i) in store.projects" :key="i" :projectCard="el" :title="store.projects.title"
+                    :description="store.projects.description" :client_name="store.projects.client_name"
+                    :client_tel="store.projects.client_tel" :created_at="store.projects.created_at"
+                    :updated_at="store.projects.updated_at" :deleted_at="store.projects.deleted_at" class="col">
+                </ProjectCard>
+            </div>
+        </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
 @use '../style/general.scss' as *;
 
-main {
-    margin-top: 50px;
+.projects-section {
+    padding-top: 50px;
     background: rgba($color: black, $alpha: 0.95);
 
     .container {
-        background-color: none;
 
         h2 {
+            text-align: center;
             color: white;
             flex-basis: 100%;
-            filter: drop-shadow(0 0 10px black)
+            filter: drop-shadow(0 0 10px black);
         }
 
         .projects-list {
@@ -72,7 +73,7 @@ main {
             color: white;
 
             .col {
-                width: calc(100%/6 - 16px*5/6);
+                width: calc(100%/4 - 16px*3/4);
             }
         }
     }

@@ -19,21 +19,20 @@ export default {
     <div class="card">
 
         <div class="info-text">
-            <h3>PROGETTO</h3>
-            <h3 class="title"> {{ projectCard.title }}</h3>
+            <h3 class="title label"> {{ projectCard.title }}</h3>
         </div>
 
-        <h4>DESCRIZIONE:</h4>
-        <p class="description"> Descrizione: {{ projectCard.description }}</p>
+        <h4 class="label">DESCRIZIONE:</h4>
+        <p class="description">{{ projectCard.description }}</p>
 
         <div class="client-info">
-            <h4>INFORMAZIONI CLIENTE:</h4>
+            <h4 class="label">INFORMAZIONI CLIENTE:</h4>
             <span class="client-name">{{ projectCard.client_name }}</span>
             <span class="client-name">{{ projectCard.client_tel }}</span>
         </div>
 
         <div class="data-info">
-            <h4>INFORMAZIONI DATI:</h4>
+            <h4 class="label">INFORMAZIONI DATI:</h4>
             <span class="data-create">Creato il: {{ projectCard.created_at }}</span>
             <span class="data-update">Aggiornato il: {{ projectCard.updated_at }}</span>
             <span v-if="projectCard.deleted_at" class="data-delete">Cancellato il: {{ projectCard.deleted_at }}</span>
@@ -47,18 +46,24 @@ export default {
 
 .card {
     border-radius: 20px;
+    background-color: aliceblue;
     box-shadow: 0 0 5px black;
-    padding: 0.75rem;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    color: white;
+    color: rgb(65, 65, 65);
     gap: 16px;
+
+    .label {
+        color: rgb(29, 29, 29);
+    }
 
     .info-text {
         .title {
             font-size: 1.2rem;
             margin-bottom: 10px;
+            text-align: center;
         }
     }
 
@@ -71,6 +76,14 @@ export default {
     .client-info {
         font-size: 1rem;
         margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        h4 {
+            flex-basis: 100%;
+            margin-bottom: 10px;
+        }
     }
 
     .data-info {
