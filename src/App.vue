@@ -1,11 +1,9 @@
 <script>
-// import Projects from './components/Projects.vue';
 import Home from './pages/Home.vue';
 import NavBar from './components/NavBar.vue'
 
 export default {
   components: {
-    // Projects,
     NavBar,
   }
 }

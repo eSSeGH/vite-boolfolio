@@ -19,7 +19,7 @@ export default {
                     <router-link :to="{ name: 'about' }">Chi Sono</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'index' }">Portfolio</router-link>
+                    <router-link :to="{ name: 'projects.index' }">Portfolio</router-link>
                 </li>
             </ul>
 

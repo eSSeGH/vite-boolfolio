@@ -30,6 +30,11 @@ export default {
     },
     mounted() {
         this.fetchProjects()
+    },
+    computed: {
+        projects() {
+            return this.store.projects
+        }
     }
 }
 </script>
@@ -40,11 +45,12 @@ export default {
             <div class="projects-list">
                 <h2>PROGETTI</h2>
 
-                <ProjectCard v-for="(el, i) in store.projects" :key="i" :projectCard="el" :title="store.projects.title"
-                    :description="store.projects.description" :client_name="store.projects.client_name"
-                    :client_tel="store.projects.client_tel" :created_at="store.projects.created_at"
-                    :updated_at="store.projects.updated_at" :deleted_at="store.projects.deleted_at" class="col">
+                <ProjectCard v-for="(el, i) in projects" :key="i" :projectCard="el" :title="projects.title"
+                    :type="projects.type ? projects.type.name : '-'" :description="projects.description"
+                    :client_name="projects.client_name" :client_tel="projects.client_tel" :created_at="projects.created_at"
+                    :updated_at="projects.updated_at" :deleted_at="projects.deleted_at" class="col">
                 </ProjectCard>
+
             </div>
         </div>
     </section>

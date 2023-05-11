@@ -17,27 +17,34 @@ export default {
 
 <template>
     <div class="card">
+        <router-link style="display: contents;" :to="`/projects/${projectCard.slug}`">
+            <div class="info-text">
+                <h3 class="title label"> {{ projectCard.title }}</h3>
+            </div>
 
-        <div class="info-text">
-            <h3 class="title label"> {{ projectCard.title }}</h3>
-        </div>
+            <p class="type">{{ projectCard.type ? projectCard.type.name : '-' }}</p>
 
-        <h4 class="label">DESCRIZIONE:</h4>
-        <p class="description">{{ projectCard.description }}</p>
+            <ul class="technologies-list" v-if="projectCard.technologies && projectCard.technologies.length > 0">
+                <li class="technology" v-for="technology in projectCard.technologies" :key="technology.id">{{
+                    technology.name }}
+                </li>
+            </ul>
 
-        <div class="client-info">
-            <h4 class="label">INFORMAZIONI CLIENTE:</h4>
-            <span class="client-name">{{ projectCard.client_name }}</span>
-            <span class="client-name">{{ projectCard.client_tel }}</span>
-        </div>
+            <p class="description">{{ projectCard.description }}</p>
 
-        <div class="data-info">
-            <h4 class="label">INFORMAZIONI DATI:</h4>
-            <span class="data-create">Creato il: {{ projectCard.created_at }}</span>
-            <span class="data-update">Aggiornato il: {{ projectCard.updated_at }}</span>
-            <span v-if="projectCard.deleted_at" class="data-delete">Cancellato il: {{ projectCard.deleted_at }}</span>
-        </div>
+            <div class="client-info">
+                <h4 class="label">INFORMAZIONI CLIENTE:</h4>
+                <span class="client-name">{{ projectCard.client_name }}</span>
+                <span class="client-name">{{ projectCard.client_tel }}</span>
+            </div>
 
+            <div class="data-info">
+                <h4 class="label">INFORMAZIONI DATI:</h4>
+                <span class="data-create">Creato il: {{ projectCard.created_at }}</span>
+                <span class="data-update">Aggiornato il: {{ projectCard.updated_at }}</span>
+                <span v-if="projectCard.deleted_at" class="data-delete">Cancellato il: {{ projectCard.deleted_at }}</span>
+            </div>
+        </router-link>
     </div>
 </template>
 
@@ -57,6 +64,31 @@ export default {
 
     .label {
         color: rgb(29, 29, 29);
+    }
+
+    .type {
+        padding: 0 12px;
+        line-height: 24px;
+        font-size: 14px;
+        border-radius: 999px;
+        background-color: rgb(242, 255, 127);
+        text-align: center;
+    }
+
+    .technologies-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+
+        .technology {
+            padding: 0 12px;
+            line-height: 20px;
+            font-size: 12px;
+            border-radius: 999px;
+            background-color: aquamarine;
+        }
+
     }
 
     .info-text {
@@ -83,6 +115,7 @@ export default {
         h4 {
             flex-basis: 100%;
             margin-bottom: 10px;
+            text-align: center;
         }
     }
 
